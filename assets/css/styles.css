@@ -34,7 +34,6 @@
     padding: 7px 12px;
     margin-bottom: 12px;
 }
-
 .login-card h1 {
     font-size: clamp(28px, 3vw, 40px);
     line-height: 1.08;
