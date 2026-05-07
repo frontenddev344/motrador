@@ -1,3 +1,98 @@
+@media (max-width: 992px) {
+    .login-section {
+        padding: 52px 0 62px;
+    }
+
+    .login-card {
+        width: min(100%, 620px);
+    }
+}
+
+@media (max-width: 768px) {
+    .login-section {
+        padding: 42px 0 52px;
+    }
+
+    .login-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .login-card h1 {
+        font-size: clamp(24px, 7vw, 34px);
+    }
+
+    .login-subtitle {
+        font-size: 14px;
+    }
+
+    .login-form input {
+        height: 44px;
+    }
+}
+
+@media (max-width: 520px) {
+    .login-section {
+        padding: 34px 0 44px;
+    }
+
+    .login-card {
+        padding: 18px 14px;
+        border-radius: 14px;
+    }
+
+    .join-link-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px) {
+    .join-section {
+        padding: 52px 0 62px;
+    }
+
+    .join-card {
+        width: min(100%, 640px);
+    }
+}
+
+@media (max-width: 768px) {
+    .join-section {
+        padding: 42px 0 52px;
+    }
+
+    .join-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .join-card h1 {
+        font-size: clamp(24px, 7vw, 34px);
+    }
+
+    .join-subtitle {
+        font-size: 14px;
+    }
+
+    .join-form input {
+        height: 44px;
+    }
+}
+
+@media (max-width: 520px) {
+    .join-section {
+        padding: 34px 0 44px;
+    }
+
+    .join-card {
+        padding: 18px 14px;
+        border-radius: 14px;
+    }
+
+    .login-link-text {
+        font-size: 13px;
+    }
+}
 
 
 /* Global final responsive normalization */
