@@ -3170,7 +3170,11 @@ img.presell-detail-icon {
 
 .review-slider {
     width: 100%;
-    overflow: visible;
+}
+
+.review-clip {
+    overflow: hidden;
+    width: 100%;
 }
 
 .review-track {
@@ -3178,7 +3182,6 @@ img.presell-detail-icon {
     gap: 12px;
     transition: transform 0.45s ease;
     will-change: transform;
-    overflow: hidden;
 }
 
 .review-card {
