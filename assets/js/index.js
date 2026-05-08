@@ -482,29 +482,13 @@ if (shopBreaksGrid && shopBreaksSort && shopBreaksShowing) {
 
 const cookieConsentStorageKey = "motrador-cookie-consent";
 const cookieDeclinedAtStorageKey = "motrador-cookie-declined-at";
-const cookieDeclineSnoozeMs = 5 * 60 * 1000;
 
 function hasAcceptedCookieConsent() {
     return window.localStorage.getItem(cookieConsentStorageKey) === "accepted";
 }
 
-function hasActiveDeclineSnooze() {
-    const declinedAtRaw = window.localStorage.getItem(cookieDeclinedAtStorageKey);
-    if (!declinedAtRaw) {
-        return false;
-    }
-
-    const declinedAt = Number(declinedAtRaw);
-    if (!Number.isFinite(declinedAt)) {
-        window.localStorage.removeItem(cookieDeclinedAtStorageKey);
-        return false;
-    }
-
-    const isStillSnoozed = (Date.now() - declinedAt) < cookieDeclineSnoozeMs;
-    if (!isStillSnoozed) {
-        window.localStorage.removeItem(cookieDeclinedAtStorageKey);
-    }
-    return isStillSnoozed;
+function hasDeclinedCookieConsent() {
+    return window.localStorage.getItem(cookieConsentStorageKey) === "declined";
 }
 
 function setCookieConsentAccepted() {
@@ -514,7 +498,7 @@ function setCookieConsentAccepted() {
 
 function setCookieConsentDeclined() {
     window.localStorage.setItem(cookieConsentStorageKey, "declined");
-    window.localStorage.setItem(cookieDeclinedAtStorageKey, String(Date.now()));
+    window.localStorage.removeItem(cookieDeclinedAtStorageKey);
 }
 
 function createCookieBanner() {
@@ -539,7 +523,7 @@ function createCookieBanner() {
 }
 
 function initCookieConsentBanner() {
-    if (hasAcceptedCookieConsent() || hasActiveDeclineSnooze()) {
+    if (hasAcceptedCookieConsent() || hasDeclinedCookieConsent()) {
         return;
     }
 
