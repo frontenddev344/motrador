@@ -4076,8 +4076,45 @@ h4.footer-social-title {
 .blog-single-hero-card {
     position: relative;
     z-index: 1;
-    max-width: 980px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    max-width: 1140px;
     padding: 0;
+}
+
+.blog-single-hero-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* .blog-single-hero-image {
+    flex: 0 0 420px;
+    width: 420px;
+} */
+
+.blog-single-hero-image img {
+    display: block;
+    width: 100%;
+    /* aspect-ratio: 16 / 9; */
+    object-fit: cover;
+    border-radius: 16px;
+    /* border: 1px solid rgba(70, 122, 233, 0.45); */
+    box-shadow: 0 8px 36px rgba(0, 20, 70, 0.5);
+    max-width: 400px;
+}
+.blog-single-hero-image {
+    width: 100%;
+    max-width: fit-content;
+}
+.blog-single-hero-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+.terms-page-main .blog-single-hero-card {
+    display: block;
+    max-width: 980px;
 }
 
 .blog-single-kicker {
@@ -4095,7 +4132,6 @@ h4.footer-social-title {
 }
 
 .blog-single-hero h1 {
-    max-width: 920px;
     font-size: clamp(28px, 3vw, 40px);
     line-height: 1.08;
     letter-spacing: -0.6px;
@@ -4106,7 +4142,6 @@ h4.footer-social-title {
 
 .blog-single-lead {
     color: #bbd3f6;
-    max-width: 860px;
     font-size: 18px;
     line-height: 1.55;
 }
