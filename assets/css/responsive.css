@@ -3362,6 +3362,10 @@
     .blog-card-cta {
         font-size: 13px;
     }
+    .trusted-media.cards {
+        
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 520px) {
