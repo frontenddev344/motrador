@@ -455,7 +455,7 @@ a {
 .main-nav a {
     color: #d9e7ff;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     transition: color 0.2s ease;
 }
 
@@ -1163,15 +1163,18 @@ img.presell-detail-icon {
 
 .presell-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: auto;
 }
 
 .presell-btn {
     width: 100%;
-    padding: 10px 12px;
+    min-height: 42px;
+    padding: 10px 14px;
     border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 /* Make Presells outline buttons look dark (View Details) */
@@ -4886,3 +4889,6 @@ FEATURES
 /* =========================
 RESPONSIVE
 ========================= */
+.topbar p {
+    font-size: 16px;
+}
