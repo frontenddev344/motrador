@@ -2081,7 +2081,7 @@
         grid-template-columns: 1fr;
     }
 
-    .platform-logos a {
+    .platform-logos div {
         min-height: 50px;
     }
 
