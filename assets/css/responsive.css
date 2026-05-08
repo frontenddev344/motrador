@@ -280,6 +280,15 @@
     .platform-card.points {
         grid-column: span 2;
     }
+    .breaks-cta-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .breaks-cta::after {
+        content: "";
+        display: none;
+    }
 }
 
 /* Final pass: index.html responsiveness only */
