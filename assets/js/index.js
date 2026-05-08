@@ -555,3 +555,74 @@ function initCookieConsentBanner() {
 }
 
 initCookieConsentBanner();
+
+const presellsSearchInput = document.querySelector(".presells-search-input");
+const presellsGrid = document.querySelector(".presells-grid");
+const presellsSort = document.querySelector(".presells-select");
+
+if (presellsSearchInput && presellsGrid) {
+    const presellCards = Array.from(presellsGrid.querySelectorAll(".presell-card"));
+
+    const presellsEmpty = document.createElement("p");
+    presellsEmpty.className = "presells-empty";
+    presellsEmpty.textContent = "No breaks match your search.";
+    presellsEmpty.hidden = true;
+    presellsGrid.insertAdjacentElement("afterend", presellsEmpty);
+
+    function getCardText(card) {
+        const title = card.querySelector(".presell-title")?.textContent || "";
+        const desc = card.querySelector(".presell-desc")?.textContent || "";
+        const details = Array.from(card.querySelectorAll(".presell-detail-text"))
+            .map((el) => el.textContent)
+            .join(" ");
+        return `${title} ${desc} ${details}`.toLowerCase();
+    }
+
+    function getCardPrice(card) {
+        const priceText = card.querySelector(".presell-detail-text")?.textContent || "";
+        const match = priceText.match(/\d+/);
+        return match ? Number(match[0]) : 0;
+    }
+
+    function getCardSpotsRemaining(card) {
+        const spotsText = Array.from(card.querySelectorAll(".presell-detail-text"))
+            .find((el) => el.textContent.includes("Remaining Spots"))?.textContent || "";
+        const match = spotsText.match(/(\d+)\//);
+        return match ? Number(match[1]) : 0;
+    }
+
+    function applyPresellsFilters() {
+        const query = (presellsSearchInput.value || "").trim().toLowerCase();
+        const sortValue = presellsSort ? presellsSort.value : "Newest First";
+
+        let filtered = presellCards.filter((card) => !query || getCardText(card).includes(query));
+
+        if (sortValue === "Price: Low to High") {
+            filtered.sort((a, b) => getCardPrice(a) - getCardPrice(b));
+        } else if (sortValue === "Price: High to Low") {
+            filtered.sort((a, b) => getCardPrice(b) - getCardPrice(a));
+        } else if (sortValue === "Spots Remaining") {
+            filtered.sort((a, b) => getCardSpotsRemaining(b) - getCardSpotsRemaining(a));
+        }
+
+        const hiddenSet = new Set(
+            presellCards.filter((card) => !filtered.includes(card))
+        );
+
+        presellCards.forEach((card) => {
+            const hide = hiddenSet.has(card);
+            card.classList.toggle("is-hidden", hide);
+            card.setAttribute("aria-hidden", String(hide));
+        });
+
+        filtered.forEach((card) => presellsGrid.appendChild(card));
+
+        presellsEmpty.hidden = filtered.length > 0;
+    }
+
+    presellsSearchInput.addEventListener("input", applyPresellsFilters);
+
+    if (presellsSort) {
+        presellsSort.addEventListener("change", applyPresellsFilters);
+    }
+}

@@ -1177,6 +1177,18 @@ img.presell-detail-icon {
     letter-spacing: 0.02em;
 }
 
+.presell-card.is-hidden {
+    display: none !important;
+}
+
+.presells-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 0;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
 /* Make Presells outline buttons look dark (View Details) */
 .presell-card .btn.btn-outline.presell-btn {
     color: #0d1627;
