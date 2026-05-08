@@ -626,3 +626,51 @@ if (presellsSearchInput && presellsGrid) {
         presellsSort.addEventListener("change", applyPresellsFilters);
     }
 }
+
+const newsletterForm = document.querySelector(".footer-newsletter form");
+
+if (newsletterForm) {
+    const emailInput = newsletterForm.querySelector("input[type='email']");
+
+    const errorMsg = document.createElement("span");
+    errorMsg.className = "newsletter-error";
+    errorMsg.setAttribute("aria-live", "polite");
+    errorMsg.hidden = true;
+    emailInput.insertAdjacentElement("afterend", errorMsg);
+
+    function showError(msg) {
+        errorMsg.textContent = msg;
+        errorMsg.hidden = false;
+        emailInput.setAttribute("aria-invalid", "true");
+        emailInput.classList.add("input-error");
+    }
+
+    function clearError() {
+        errorMsg.hidden = true;
+        emailInput.removeAttribute("aria-invalid");
+        emailInput.classList.remove("input-error");
+    }
+
+    emailInput.addEventListener("input", clearError);
+
+    newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        clearError();
+
+        const value = emailInput.value.trim();
+
+        if (!value) {
+            showError("Please enter your email address.");
+            emailInput.focus();
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            showError("Please enter a valid email address.");
+            emailInput.focus();
+            return;
+        }
+
+        window.location.href = "./join.html";
+    });
+}
