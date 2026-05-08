@@ -804,6 +804,10 @@
         padding: 52px 0 58px;
     }
 
+    .trending-breaks .card-media {
+        height: 215px;
+    }
+
     .section-subtitle {
         font-size: 16px;
     }
@@ -1018,6 +1022,10 @@
 
     .breaks-grid {
         grid-template-columns: 1fr;
+    }
+
+    .trending-breaks .card-media {
+        height: 205px;
     }
 
     .card-body h3 {
@@ -1749,6 +1757,10 @@
     main .card-media {
         height: 170px;
     }
+
+    main .trending-breaks .card-media {
+        height: 190px;
+    }
     main .presells-grid {
         grid-template-columns: 1fr;
     }
@@ -2238,6 +2250,10 @@
     main .trusted-card-showcase img,
     main .trusted-media.cards img {
         height: 160px;
+    }
+
+    main .trending-breaks .card-media {
+        height: 178px;
     }
 }
 
