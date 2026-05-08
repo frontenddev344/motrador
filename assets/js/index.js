@@ -4,6 +4,13 @@ const headerMenu = document.querySelector(".header-menu");
 const topbarClose = document.querySelector(".topbar-close");
 const topbar = document.querySelector(".topbar");
 
+// Hide .html in the browser URL for static hosts without rewrite support.
+if (window.location.pathname.endsWith(".html")) {
+    const cleanPath = window.location.pathname.replace(/\.html$/, "");
+    const cleanUrl = `${cleanPath}${window.location.search}${window.location.hash}`;
+    window.history.replaceState(null, "", cleanUrl);
+}
+
 if (window.AOS) {
     window.AOS.init({
         duration: 800,
