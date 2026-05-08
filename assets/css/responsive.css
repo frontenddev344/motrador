@@ -2847,8 +2847,15 @@
     }
 
     .shop-break-card h3 {
-        font-size: 11px;
-    }
+    font-size: 13px;
+    min-height: unset;
+    margin-bottom: 5px;
+}
+.shop-break-meta {
+    
+    min-height: unset;
+    margin-bottom: 12px;
+}
 
     .shop-break-price {
         font-size: 19px;
