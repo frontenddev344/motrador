@@ -232,11 +232,12 @@
             passwordInput.addEventListener("input", validatePassword);
 
             form.addEventListener("submit", function (event) {
+                event.preventDefault();
                 const isEmailValid = validateEmail();
                 const isPasswordValid = validatePassword();
 
-                if (!isEmailValid || !isPasswordValid) {
-                    event.preventDefault();
+                if (isEmailValid && isPasswordValid) {
+                    window.location.href = './index.html';
                 }
             });
         })();
