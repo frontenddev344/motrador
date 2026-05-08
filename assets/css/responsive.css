@@ -2860,6 +2860,9 @@
     .shop-break-price {
         font-size: 19px;
     }
+    .cookie-banner-accept {
+    max-width: 50%;
+}
 }
 
 @media (max-width: 520px) {
