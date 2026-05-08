@@ -3387,9 +3387,76 @@
     }
 }
 
+/* ── 360px and below: small-screen hardening ── */
+@media (max-width: 360px) {
 
+    /* Filter pills: smaller text so all fit without cramping */
+    .filter-pill {
+        font-size: 11px;
+        padding: 6px 10px;
+        gap: 4px;
+    }
 
+    .pill-icon {
+        font-size: 12px;
+    }
 
+    /* Section labels */
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 0.08em;
+    }
+
+    /* Hero heading at extreme small screens */
+    .hero-content h1 {
+        font-size: clamp(24px, 9vw, 32px);
+    }
+
+    /* Break card meta icons */
+    .meta-icon {
+        font-size: 13px;
+    }
+
+    /* Presells field padding */
+    .presells-field,
+    .presells-search {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    /* Shop-breaks toolbar */
+    .shop-breaks-toolbar {
+        gap: 8px;
+    }
+
+    /* Login / Join form cards */
+    .login-card,
+    .join-card {
+        padding: 20px 14px;
+    }
+
+    /* Footer payments icons */
+    .footer-payments img {
+        height: 18px;
+    }
+
+    /* Review dots spacing */
+    .review-dots {
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    /* Breaks CTA */
+    .breaks-cta-content h3,
+    .why-cta-content h3 {
+        font-size: clamp(18px, 7vw, 22px);
+    }
+
+    /* Trusted bottom actions */
+    .trusted-bottom-actions {
+        gap: 8px;
+    }
+}
 
 
 
