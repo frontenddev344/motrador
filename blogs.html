@@ -44,8 +44,7 @@
                 <nav class="main-nav" id="mainNav">
                     <a href="./presells.html">Presells</a>
                     <a href="./how-it-works.html">How It Works</a>
-                   
-                    <a href="./blogs.html">Blog</a>
+                    <a href="./blogs.html" class="active">Blog</a>
                     <a href="./shop-breaks.html">Shop Breaks</a>
                 </nav>
 
@@ -66,192 +65,95 @@
         </div>
     </header>
 
-    <main>
-        <section class="shop-breaks-page">
+    <main class="blogs-page-main">
+        <section class="blogs-hero" aria-labelledby="blogs-heading">
+            <div class="container blogs-hero-inner">
+                <p class="blogs-hero-kicker" data-aos="fade-up">Motrador Blog</p>
+                <h1 id="blogs-heading" data-aos="fade-up" data-aos-delay="60">Collector guides &amp; hobby insights</h1>
+                <p class="blogs-hero-lead" data-aos="fade-up" data-aos-delay="120">
+                    Tips on breaks, consignment, collecting trends, and buying smarter—written for the Motrador
+                    community.
+                </p>
+            </div>
+        </section>
+
+        <section class="blogs-list-section" aria-label="All articles">
             <div class="container">
-                <h1 class="shop-breaks-title">SHOP BREAKS</h1>
-
-                <div class="shop-breaks-toolbar">
-                    <label class="shop-breaks-field">
-                        <span>Sort by:</span>
-                        <select id="shopBreaksSort" aria-label="Sort shop breaks">
-                            <option value="default">Any rarity and quality by rating</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="price-desc">Price: High to Low</option>
-                            <option value="newest">Newest First</option>
-                        </select>
-                    </label>
-
-                    <label class="shop-breaks-field">
-                        <span>Showing:</span>
-                        <select id="shopBreaksShowing" aria-label="Items per page">
-                            <option value="10">10 results</option>
-                            <option value="20">20 results</option>
-                            <option value="30">30 results</option>
-                        </select>
-                    </label>
-                </div>
-
-                <p class="shop-breaks-empty" id="shopBreaksEmpty" hidden>No breaks match your filters.</p>
-
-                <div class="shop-breaks-grid" id="shopBreaksGrid">
-                    <article class="shop-break-card">
-                        <img src="./assets/images/hero-iimg.png" alt="2024 Topps Finest Baseball Break">
-                        <h3>2024 Topps Finest Baseball Hobby Box Break</h3>
-                        <p class="shop-break-meta">2 teams left in this break</p>
-                        <p class="shop-break-price">$25.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                <div class="blogs-grid">
+                    <a class="blog-card" href="./blog1.html" data-aos="fade-up" data-aos-delay="40">
+                        <div class="blog-card-media">
+                            <img src="./assets/images/prix-card-2.png" alt="" width="640" height="360" loading="lazy">
                         </div>
-                    </article>
+                        <div class="blog-card-body">
+                            <span class="blog-card-tag">#BIGHITTIES</span>
+                            <h2 class="blog-card-title">Turn your #BIGHITTIES into cash with Motrador</h2>
+                            <p class="blog-card-excerpt">
+                                Sell premium sports cards quickly and securely with Motrador consignment—without the
+                                hassle of managing listings yourself.
+                            </p>
+                            <span class="blog-card-cta">Read article</span>
+                        </div>
+                    </a>
 
-                    <article class="shop-break-card">
-                        <img src="./assets/images/basketball-prizm.webp" alt="Topps Chrome Cosmic Break">
-                        <h3>Topps Chrome Cosmic 2024 Team Break</h3>
-                        <p class="shop-break-meta">3 random teams available</p>
-                        <p class="shop-break-price">$35.00 - $45.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                    <a class="blog-card" href="./blog2.html" data-aos="fade-up" data-aos-delay="80">
+                        <div class="blog-card-media">
+                            <img src="./assets/images/football-prizm.webp" alt="" width="640" height="360" loading="lazy">
                         </div>
-                    </article>
+                        <div class="blog-card-body">
+                            <span class="blog-card-tag">Sports cards</span>
+                            <h2 class="blog-card-title">Are sports cards still worth collecting in 2026?</h2>
+                            <p class="blog-card-excerpt">
+                                How the hobby has evolved into a global market—and what it means for collectors and
+                                investors today.
+                            </p>
+                            <span class="blog-card-cta">Read article</span>
+                        </div>
+                    </a>
 
-                    <article class="shop-break-card">
-                        <img src="./assets/images/football-prizm.webp" alt="2023-24 Premium Break">
-                        <h3>2023-24 Premium Hobby Mixer Break</h3>
-                        <p class="shop-break-meta">4 teams left in this break</p>
-                        <p class="shop-break-price">$88.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                    <a class="blog-card" href="./blog3.html" data-aos="fade-up" data-aos-delay="120">
+                        <div class="blog-card-media">
+                            <img src="./assets/images/baseball-prizm.jpg" alt="" width="640" height="360" loading="lazy">
                         </div>
-                    </article>
+                        <div class="blog-card-body">
+                            <span class="blog-card-tag">Baseball</span>
+                            <h2 class="blog-card-title">Are baseball cards still a good investment in 2026?</h2>
+                            <p class="blog-card-excerpt">
+                                Why baseball remains one of the most active corners of the collectibles market this
+                                year.
+                            </p>
+                            <span class="blog-card-cta">Read article</span>
+                        </div>
+                    </a>
 
-                    <article class="shop-break-card">
-                        <img src="./assets/images/chery-card1.png" alt="Immaculate case break">
-                        <h3>2024 Panini Immaculate Case Break</h3>
-                        <p class="shop-break-meta">5 teams left in this break</p>
-                        <p class="shop-break-price">$95.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                    <a class="blog-card" href="./blog4.html" data-aos="fade-up" data-aos-delay="160">
+                        <div class="blog-card-media">
+                            <img src="./assets/images/hero-iimg.png" alt="" width="640" height="360" loading="lazy">
                         </div>
-                    </article>
+                        <div class="blog-card-body">
+                            <span class="blog-card-tag">Buying guide</span>
+                            <h2 class="blog-card-title">The best way to buy sports cards online in 2026</h2>
+                            <p class="blog-card-excerpt">
+                                Live breaks, marketplaces, and retailers—how to choose the right path for your budget
+                                and goals.
+                            </p>
+                            <span class="blog-card-cta">Read article</span>
+                        </div>
+                    </a>
 
-                    <article class="shop-break-card">
-                        <img src="./assets/images/baseball-prizm.jpg" alt="Topps Chrome update break">
-                        <h3>Topps Chrome Update Team Break</h3>
-                        <p class="shop-break-meta">8 teams left in this break</p>
-                        <p class="shop-break-price">$45.00 - $50.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                    <a class="blog-card" href="./blog5.html" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-card-media">
+                            <img src="./assets/images/basketball-prizm.webp" alt="" width="640" height="360"
+                                loading="lazy">
                         </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/soccer-prizm.jpg" alt="Soccer hobby mega break">
-                        <h3>Soccer Hobby Mega Team Break</h3>
-                        <p class="shop-break-meta">10 teams left in this break</p>
-                        <p class="shop-break-price">$30.00 - $55.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
+                        <div class="blog-card-body">
+                            <span class="blog-card-tag">Valuation</span>
+                            <h2 class="blog-card-title">How to know if your sports cards are actually valuable</h2>
+                            <p class="blog-card-excerpt">
+                                Condition, rarity, demand, and comps—the essentials every collector should understand.
+                            </p>
+                            <span class="blog-card-cta">Read article</span>
                         </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/soccer-prizm.jpg" alt="Soccer hobby mini break">
-                        <h3>Soccer Hobby Mini Team Break</h3>
-                        <p class="shop-break-meta">7 teams left in this break</p>
-                        <p class="shop-break-price">$40.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
-                        <h3>2024 Prizm Football Parallel Mixer</h3>
-                        <p class="shop-break-meta">6 teams left in this break</p>
-                        <p class="shop-break-price">$13.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
-                        <h3>Topps Cosmic Special Team Break</h3>
-                        <p class="shop-break-meta">Premium random teams available</p>
-                        <p class="shop-break-price">Reserve from $149.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </article>
-                    <article class="shop-break-card">
-                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
-                        <h3>2024 Prizm Football Parallel Mixer</h3>
-                        <p class="shop-break-meta">6 teams left in this break</p>
-                        <p class="shop-break-price">$13.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
-                        <h3>Topps Cosmic Special Team Break</h3>
-                        <p class="shop-break-meta">Premium random teams available</p>
-                        <p class="shop-break-price">Reserve from $149.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </article>
-                    <article class="shop-break-card">
-                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
-                        <h3>2024 Prizm Football Parallel Mixer</h3>
-                        <p class="shop-break-meta">6 teams left in this break</p>
-                        <p class="shop-break-price">$13.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
-                        <h3>Topps Cosmic Special Team Break</h3>
-                        <p class="shop-break-meta">Premium random teams available</p>
-                        <p class="shop-break-price">Reserve from $149.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </article>
-                    <article class="shop-break-card">
-                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
-                        <h3>2024 Prizm Football Parallel Mixer</h3>
-                        <p class="shop-break-meta">6 teams left in this break</p>
-                        <p class="shop-break-price">$13.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View</a>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </article>
-
-                    <article class="shop-break-card">
-                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
-                        <h3>Topps Cosmic Special Team Break</h3>
-                        <p class="shop-break-meta">Premium random teams available</p>
-                        <p class="shop-break-price">Reserve from $149.00</p>
-                        <div class="shop-break-actions">
-                            <a href="#" class="btn btn-outline">View Details</a>
-                        </div>
-                    </article>
+                    </a>
                 </div>
             </div>
         </section>
@@ -280,11 +182,8 @@
                     <ul>
                         <li><a href="./index.html">Home</a></li>
                         <li><a href="./shop-breaks.html">Shop Breaks</a></li>
-                        
                         <li><a href="./how-it-works.html">How It Works</a></li>
-                        
                         <li><a href="./blogs.html">Blog</a></li>
-                        
                         <li><a href="./terms-condition.html">Terms &amp; Conditions</a></li>
                         <li><a href="./privacy-policy.html">Privacy Policy</a></li>
                     </ul>
@@ -314,12 +213,6 @@
 
             <div class="footer-bottom">
                 <p class="footer-copy">&copy; 2026 <a href="#">Motrador</a>. All Rights Reserved.</p>
-                <!-- <ul class="footer-bottom-links">
-                    <li><a href="#">Authentic Sports Cards</a></li>
-                    <li><a href="#">Live Breaks</a></li>
-                    <li><a href="#">Hobby Boxes</a></li>
-                    <li><a href="#">Collector Community</a></li>
-                </ul> -->
                 <div class="footer-payments">
                     <img src="./assets/images/visa.png" alt="Visa">
                     <img src="./assets/images/card.png" alt="Mastercard">
@@ -330,6 +223,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>

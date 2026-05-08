@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <title>Motrador | Shop Breaks</title>
+    <title>Motrador | Blog</title>
 </head>
 
 <body>
     <div class="topbar">
         <div class="container topbar-inner">
             <p>
-                Live Breaks Tonight - New Hobby Boxes Added
+                Live Breaks Tonight — New Hobby Boxes Added
                 <span>| Free Shipping on Orders $99+</span>
             </p>
             <button class="topbar-close" aria-label="Close top announcement">&times;</button>
@@ -54,10 +54,10 @@
                         <img src="./assets/images/magnifying-glass.png" alt="Search icon" class="search-btn-icon">
                     </button>
                     <button class="icon-btn" aria-label="Wishlist">
-                        <img src="./assets/images/heart.png" alt="Search icon" class="search-btn-icon">
+                        <img src="./assets/images/heart.png" alt="Wishlist icon" class="search-btn-icon">
                     </button>
                     <button class="icon-btn cart" aria-label="Cart">
-                        <img src="./assets/images/grocery-store.png" alt="Search icon" class="search-btn-icon">
+                        <img src="./assets/images/grocery-store.png" alt="Cart icon" class="search-btn-icon">
                     </button>
                     <a class="btn btn-outline" href="./login.html">Login</a>
                     <a class="btn btn-primary small" href="./join.html">Join Now</a>
@@ -67,259 +67,195 @@
     </header>
 
     <main>
-        <div class="shopbreak-sec">
+        <section class="shop-breaks-page">
+            <div class="container">
+                <h1 class="shop-breaks-title">SHOP BREAKS</h1>
 
-            <section class="shop-breaks">
-
-                <div class="top-small">LIVE & UPCOMING BREAKS</div>
-
-                <h1 class="main-title">SHOP BREAKS</h1>
-
-                <p class="subtext section-subtitle">
-                    Browse premium sports card breaks, hobby boxes, and exclusive collector drops across football,
-                    basketball, baseball, soccer, hockey, Pokémon and more.
-                </p>
-
-                <!-- FILTERS -->
-
-                <div class="filters">
-
-                    <!-- SORT -->
-
-                    <div class="select-wrap">
-
-                        <label>Sort By</label>
-
-                        <select id="sortSelect">
-                            <option value="featured">Featured</option>
-                            <option value="low">Price Low To High</option>
-                            <option value="high">Price High To Low</option>
+                <div class="shop-breaks-toolbar">
+                    <label class="shop-breaks-field">
+                        <span>Sort by:</span>
+                        <select id="shopBreaksSort" aria-label="Sort shop breaks">
+                            <option value="default">Any rarity and quality by rating</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
                         </select>
+                    </label>
 
-                    </div>
-
-                    <!-- FILTER -->
-
-                    <div class="select-wrap">
-
-                        <label>Filter By Sport</label>
-
-                        <select id="sportFilter">
-                            <option value="all">All Sports</option>
-                            <option value="football">Football</option>
-                            <option value="basketball">Basketball</option>
-                            <option value="baseball">Baseball</option>
-                            <option value="pokemon">Pokemon</option>
+                    <label class="shop-breaks-field">
+                        <span>Showing:</span>
+                        <select id="shopBreaksShowing" aria-label="Items per page">
+                            <option value="10">10 results</option>
+                            <option value="20">20 results</option>
+                            <option value="30">30 results</option>
                         </select>
-
-                    </div>
-
-                    <!-- SEARCH -->
-
-                    <div class="search-box">
-
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="m21 21-4.35-4.35m1.85-5.15a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-                        </svg>
-
-                        <input type="text" id="searchInput" placeholder="Search teams, players, products...">
-
-                    </div>
-
+                    </label>
                 </div>
 
-                <!-- CARDS -->
+                <p class="shop-breaks-empty" id="shopBreaksEmpty" hidden>No breaks match your filters.</p>
 
-                <div class="cards-grid" id="cardsGrid">
-
-                    <!-- CARD 1 -->
-
-                    <div class="break-card" data-name="football prizm hobby">
-                        <div class="card-image">
-                            <span class="tag red">HOT BREAK</span>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1200&auto=format&fit=crop">
+                <div class="shop-breaks-grid" id="shopBreaksGrid">
+                    <article class="shop-break-card">
+                        <img src="./assets/images/hero-iimg.png" alt="2024 Topps Finest Baseball Break">
+                        <h3>2024 Topps Finest Baseball Hobby Box Break</h3>
+                        <p class="shop-break-meta">2 teams left in this break</p>
+                        <p class="shop-break-price">$25.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
+                    </article>
 
-                        <div class="card-content">
-
-                            <h3 class="card-title">2024 Prizm Football Hobby Break</h3>
-
-                            <p class="card-desc">
-                                Premium NFL hobby break featuring rookie autos and exclusive inserts.
-                            </p>
-
-                            <div class="price">$49 Per Spot</div>
-
-                            <div class="meta">
-                                Spots Left: 12/30
-                            </div>
-
-                            <div class="meta">
-                                Break Date: Fri - 7PM EST
-                            </div>
-
-                            <div class="buttons">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Join Break</button>
-                            </div>
-
+                    <article class="shop-break-card">
+                        <img src="./assets/images/basketball-prizm.webp" alt="Topps Chrome Cosmic Break">
+                        <h3>Topps Chrome Cosmic 2024 Team Break</h3>
+                        <p class="shop-break-meta">3 random teams available</p>
+                        <p class="shop-break-price">$35.00 - $45.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- CARD 2 -->
-
-                    <div class="break-card" data-name="basketball nba select">
-                        <div class="card-image">
-                            <span class="tag orange">LIVE TONIGHT</span>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop">
+                    <article class="shop-break-card">
+                        <img src="./assets/images/football-prizm.webp" alt="2023-24 Premium Break">
+                        <h3>2023-24 Premium Hobby Mixer Break</h3>
+                        <p class="shop-break-meta">4 teams left in this break</p>
+                        <p class="shop-break-price">$88.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
+                    </article>
 
-                        <div class="card-content">
-
-                            <h3 class="card-title">NBA Select Mega Box Break</h3>
-
-                            <p class="card-desc">
-                                Chase top NBA rookies and numbered parallels.
-                            </p>
-
-                            <div class="price">$39 Per Spot</div>
-
-                            <div class="meta">
-                                Spots Left: 8/20
-                            </div>
-
-                            <div class="meta">
-                                Break Date: Tonight - 8PM EST
-                            </div>
-
-                            <div class="buttons">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Reserve Spot</button>
-                            </div>
-
+                    <article class="shop-break-card">
+                        <img src="./assets/images/chery-card1.png" alt="Immaculate case break">
+                        <h3>2024 Panini Immaculate Case Break</h3>
+                        <p class="shop-break-meta">5 teams left in this break</p>
+                        <p class="shop-break-price">$95.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- CARD 3 -->
-
-                    <div class="break-card" data-name="baseball chrome topps">
-                        <div class="card-image">
-                            <span class="tag blue">LIMITED SPOTS</span>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1508344928928-7165b67de128?q=80&w=1200&auto=format&fit=crop">
+                    <article class="shop-break-card">
+                        <img src="./assets/images/baseball-prizm.jpg" alt="Topps Chrome update break">
+                        <h3>Topps Chrome Update Team Break</h3>
+                        <p class="shop-break-meta">8 teams left in this break</p>
+                        <p class="shop-break-price">$45.00 - $50.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
+                    </article>
 
-                        <div class="card-content">
-
-                            <h3 class="card-title">Topps Chrome Baseball Break</h3>
-
-                            <p class="card-desc">
-                                Exclusive Topps Chrome baseball hobby break with premium rookies.
-                            </p>
-
-                            <div class="price">$29 Per Spot</div>
-
-                            <div class="meta">
-                                Spots Left: 15/25
-                            </div>
-
-                            <div class="meta">
-                                Break Date: Sun - 6PM EST
-                            </div>
-
-                            <div class="buttons">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Buy Spot</button>
-                            </div>
-
+                    <article class="shop-break-card">
+                        <img src="./assets/images/soccer-prizm.jpg" alt="Soccer hobby mega break">
+                        <h3>Soccer Hobby Mega Team Break</h3>
+                        <p class="shop-break-meta">10 teams left in this break</p>
+                        <p class="shop-break-price">$30.00 - $55.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- CARD 4 -->
-
-                    <div class="break-card" data-name="pokemon scarlet violet">
-                        <div class="card-image">
-                            <span class="tag green">NEW DROP</span>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=1200&auto=format&fit=crop">
+                    <article class="shop-break-card">
+                        <img src="./assets/images/soccer-prizm.jpg" alt="Soccer hobby mini break">
+                        <h3>Soccer Hobby Mini Team Break</h3>
+                        <p class="shop-break-meta">7 teams left in this break</p>
+                        <p class="shop-break-price">$40.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
+                    </article>
 
-                        <div class="card-content">
-
-                            <h3 class="card-title">Pokémon Scarlet & Violet Elite Break</h3>
-
-                            <p class="card-desc">
-                                Rare Pokémon hobby break featuring ultra rares and collectors hits.
-                            </p>
-
-                            <div class="price">$25 Per Spot</div>
-
-                            <div class="meta">
-                                Spots Left: 10/30
-                            </div>
-
-                            <div class="meta">
-                                Break Date: Fri - 9PM EST
-                            </div>
-
-                            <div class="buttons">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Join Break</button>
-                            </div>
-
+                    <article class="shop-break-card">
+                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
+                        <h3>2024 Prizm Football Parallel Mixer</h3>
+                        <p class="shop-break-meta">6 teams left in this break</p>
+                        <p class="shop-break-price">$13.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- CARD 5 -->
-
-                    <div class="break-card" data-name="basketball mosaic">
-                        <div class="card-image">
-                            <span class="tag purple">TRENDING</span>
-
-                            <img
-                                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop">
+                    <article class="shop-break-card">
+                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
+                        <h3>Topps Cosmic Special Team Break</h3>
+                        <p class="shop-break-meta">Premium random teams available</p>
+                        <p class="shop-break-price">Reserve from $149.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View Details</a>
                         </div>
-
-                        <div class="card-content">
-
-                            <h3 class="card-title">2024 Mosaic Basketball Break</h3>
-
-                            <p class="card-desc">
-                                One of the hottest basketball breaks featuring rookie color blasts.
-                            </p>
-
-                            <div class="price">$59 Per Spot</div>
-
-                            <div class="meta">
-                                Spots Left: 10/20
-                            </div>
-
-                            <div class="meta">
-                                Break Date: Sat - 5PM EST
-                            </div>
-
-                            <div class="buttons">
-                                <button class="btn btn-outline">View Details</button>
-                                <button class="btn btn-primary">Join Break</button>
-                            </div>
-
+                    </article>
+                    <article class="shop-break-card">
+                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
+                        <h3>2024 Prizm Football Parallel Mixer</h3>
+                        <p class="shop-break-meta">6 teams left in this break</p>
+                        <p class="shop-break-price">$13.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
-                    </div>
+                    </article>
 
+                    <article class="shop-break-card">
+                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
+                        <h3>Topps Cosmic Special Team Break</h3>
+                        <p class="shop-break-meta">Premium random teams available</p>
+                        <p class="shop-break-price">Reserve from $149.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </article>
+                    <article class="shop-break-card">
+                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
+                        <h3>2024 Prizm Football Parallel Mixer</h3>
+                        <p class="shop-break-meta">6 teams left in this break</p>
+                        <p class="shop-break-price">$13.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </article>
+
+                    <article class="shop-break-card">
+                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
+                        <h3>Topps Cosmic Special Team Break</h3>
+                        <p class="shop-break-meta">Premium random teams available</p>
+                        <p class="shop-break-price">Reserve from $149.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </article>
+                    <article class="shop-break-card">
+                        <img src="./assets/images/hockey-prizm.jpg" alt="Prizm football mixer">
+                        <h3>2024 Prizm Football Parallel Mixer</h3>
+                        <p class="shop-break-meta">6 teams left in this break</p>
+                        <p class="shop-break-price">$13.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View</a>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </article>
+
+                    <article class="shop-break-card">
+                        <img src="./assets/images/basketball-prizm.webp" alt="Topps cosmic special break">
+                        <h3>Topps Cosmic Special Team Break</h3>
+                        <p class="shop-break-meta">Premium random teams available</p>
+                        <p class="shop-break-price">Reserve from $149.00</p>
+                        <div class="shop-break-actions">
+                            <a href="#" class="btn btn-outline">View Details</a>
+                        </div>
+                    </article>
                 </div>
-
-            </section>
-
-        </div>
+            </div>
+        </section>
     </main>
-
 
     <footer class="site-footer">
         <div class="container">
@@ -394,7 +330,6 @@
             </div>
         </div>
     </footer>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
