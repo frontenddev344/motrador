@@ -2598,6 +2598,7 @@ img.presell-detail-icon {
     place-items: center;
     margin-bottom: 12px;
     font-size: 20px;
+    color: #ffffff;
     background: linear-gradient(180deg, rgba(22, 114, 255, 0.25), rgba(8, 44, 109, 0.32));
     border: 1px solid rgba(101, 158, 255, 0.48);
 }
