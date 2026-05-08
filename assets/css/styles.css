@@ -856,7 +856,7 @@ body.search-modal-open {
 
 .hero-media img {
     width: 100%;
-    max-width: 460px;
+    max-width: 490px;
     margin-left: auto;
     display: block;
     filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.5));
