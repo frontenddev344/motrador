@@ -278,13 +278,14 @@
             confirmPasswordInput.addEventListener("input", validateConfirmPassword);
 
             form.addEventListener("submit", function (event) {
+                event.preventDefault();
                 const isNameValid = validateName();
                 const isEmailValid = validateEmail();
                 const isPasswordValid = validatePassword();
                 const isConfirmPasswordValid = validateConfirmPassword();
 
-                if (!isNameValid || !isEmailValid || !isPasswordValid || !isConfirmPasswordValid) {
-                    event.preventDefault();
+                if (isNameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+                    window.location.href = './login.html';
                 }
             });
         })();
