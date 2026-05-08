@@ -3931,14 +3931,39 @@ h4.footer-social-title {
     height: 40px;
     border: 1px solid #cad9fb;
     border-radius: 10px;
-    background: #ffffff;
+    background-color: #fff;
     color: #183061;
     font-size: 12px;
     font-weight: 600;
-    padding: 0 12px;
+    padding: 0 40px 0 12px; /* space for custom arrow */
     outline: none;
     box-shadow: 0 4px 12px rgba(23, 62, 133, 0.08);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    /* Safari fix */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Prevent Safari zoom/text weirdness */
+    line-height: normal;
+}
+
+/* custom dropdown arrow */
+.shop-breaks-field {
+    position: relative;
+    display: inline-block;
+}
+
+.shop-breaks-field::after {
+    content: "▼";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 10px;
+    color: #183061;
 }
 
 .shop-breaks-field select:focus {
