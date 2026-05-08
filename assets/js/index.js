@@ -80,7 +80,7 @@ if (searchModal && searchTrigger && searchInput && searchResults && searchStatus
     });
 
     addSearchItem("Login", "./login.html", "Page");
-    addSearchItem("Join Now", "./join.html", "Page");
+    addSearchItem("Sign Up", "./join.html", "Page");
     addSearchItem("Shop Breaks", "./shop-breaks.html", "Page");
 
     const uniqueSearchableItems = Array.from(
