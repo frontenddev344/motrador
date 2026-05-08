@@ -49,7 +49,7 @@
                 </nav>
 
                 <div class="header-actions">
-                    <button class="icon-btn" aria-label="Search">
+                    <button class="icon-btn header-search-trigger" aria-label="Open search" type="button">
                         <img src="./assets/images/magnifying-glass.png" alt="Search icon" class="search-btn-icon">
                     </button>
                     <button class="icon-btn" aria-label="Wishlist">
@@ -64,6 +64,25 @@
             </div>
         </div>
     </header>
+
+    <div class="search-modal" id="searchModal" aria-hidden="true">
+        <div class="search-modal-backdrop" data-search-modal-close></div>
+        <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+            <button class="search-modal-close" type="button" aria-label="Close search" data-search-modal-close>&times;</button>
+            <p class="search-modal-kicker">Quick Search</p>
+            <h2 id="searchModalTitle">Search Motrador</h2>
+            <form class="search-modal-form" id="searchModalForm" role="search">
+                <input type="search" id="searchModalInput" class="search-modal-input"
+                    placeholder="Search pages, breaks, blogs..." autocomplete="off">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            <p class="search-modal-helper">Try: "football", "shop", "blog", "login"</p>
+            <div class="search-modal-results-wrap">
+                <p class="search-modal-status" id="searchModalStatus">Start typing to see matching results.</p>
+                <div class="search-modal-results" id="searchModalResults" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
 
     <main class="blogs-page-main">
         <section class="blogs-hero" aria-labelledby="blogs-heading">

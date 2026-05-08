@@ -3182,6 +3182,45 @@
 
 }
 
+@media (max-width: 992px) {
+    .search-modal-dialog {
+        margin-top: 70px;
+        width: min(760px, 94%);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-modal-dialog {
+        margin-top: 62px;
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .search-modal-form {
+        grid-template-columns: 1fr;
+    }
+
+    .search-modal-form .btn {
+        width: 100%;
+    }
+
+    .search-modal-results {
+        max-height: 52vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-modal-dialog {
+        width: 95%;
+        margin-top: 52px;
+        padding: 14px;
+    }
+
+    .search-modal h2 {
+        font-size: clamp(20px, 7vw, 26px);
+    }
+}
+
 /* Blog listing page */
 @media (max-width: 1280px) {
     .blogs-hero-inner {

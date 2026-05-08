@@ -42,6 +42,146 @@ if (topbarClose && topbar) {
     });
 }
 
+const searchModal = document.querySelector("#searchModal");
+const searchTrigger = document.querySelector(".header-search-trigger");
+const searchInput = document.querySelector("#searchModalInput");
+const searchResults = document.querySelector("#searchModalResults");
+const searchStatus = document.querySelector("#searchModalStatus");
+const searchForm = document.querySelector("#searchModalForm");
+const searchModalCloseButtons = document.querySelectorAll("[data-search-modal-close]");
+
+if (searchModal && searchTrigger && searchInput && searchResults && searchStatus && searchForm) {
+    const searchableItems = [];
+    let lastFocusedElement = null;
+
+    function addSearchItem(title, href, type) {
+        if (!title || !href) {
+            return;
+        }
+        searchableItems.push({
+            title: title.trim(),
+            href,
+            type
+        });
+    }
+
+    document.querySelectorAll(".main-nav a").forEach((link) => {
+        addSearchItem(link.textContent || "", link.getAttribute("href"), "Page");
+    });
+
+    document.querySelectorAll(".break-card h3").forEach((heading) => {
+        const cardAction = heading.closest(".break-card")?.querySelector(".btn.wide");
+        addSearchItem(heading.textContent || "", cardAction?.getAttribute("href") || "./shop-breaks.html", "Break");
+    });
+
+    document.querySelectorAll(".blog-card-title").forEach((heading) => {
+        const blogLink = heading.closest(".blog-card");
+        addSearchItem(heading.textContent || "", blogLink?.getAttribute("href"), "Blog");
+    });
+
+    addSearchItem("Login", "./login.html", "Page");
+    addSearchItem("Join Now", "./join.html", "Page");
+    addSearchItem("Shop Breaks", "./shop-breaks.html", "Page");
+
+    const uniqueSearchableItems = Array.from(
+        new Map(searchableItems.map((item) => [`${item.title}|${item.href}`, item])).values()
+    );
+
+    function renderResults(items, query) {
+        searchResults.innerHTML = "";
+
+        if (!query.trim()) {
+            searchStatus.textContent = "Start typing to see matching results.";
+            return;
+        }
+
+        if (!items.length) {
+            searchStatus.textContent = `No results found for "${query}".`;
+            return;
+        }
+
+        searchStatus.textContent = `${items.length} result${items.length > 1 ? "s" : ""} found.`;
+
+        const fragment = document.createDocumentFragment();
+        items.forEach((item) => {
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.className = "search-result-item";
+
+            const title = document.createElement("span");
+            title.className = "search-result-title";
+            title.textContent = item.title;
+
+            const meta = document.createElement("span");
+            meta.className = "search-result-meta";
+            meta.textContent = item.type;
+
+            link.appendChild(title);
+            link.appendChild(meta);
+            fragment.appendChild(link);
+        });
+
+        searchResults.appendChild(fragment);
+    }
+
+    function getMatches(query) {
+        const normalizedQuery = query.trim().toLowerCase();
+        if (!normalizedQuery) {
+            return [];
+        }
+        return uniqueSearchableItems
+            .filter((item) => item.title.toLowerCase().includes(normalizedQuery))
+            .slice(0, 10);
+    }
+
+    function openSearchModal() {
+        lastFocusedElement = document.activeElement;
+        searchModal.classList.add("is-open");
+        searchModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("search-modal-open");
+        searchInput.focus();
+    }
+
+    function closeSearchModal() {
+        searchModal.classList.remove("is-open");
+        searchModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("search-modal-open");
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+            lastFocusedElement.focus();
+        }
+    }
+
+    searchTrigger.addEventListener("click", openSearchModal);
+
+    searchModalCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeSearchModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && searchModal.classList.contains("is-open")) {
+            closeSearchModal();
+        }
+    });
+
+    searchInput.addEventListener("input", (event) => {
+        const query = event.target.value || "";
+        renderResults(getMatches(query), query);
+    });
+
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const query = searchInput.value || "";
+        const matches = getMatches(query);
+
+        if (matches.length) {
+            window.location.href = matches[0].href;
+            return;
+        }
+
+        renderResults([], query);
+    });
+}
+
 const statsContainer = document.querySelector("#statsContainer");
 const trustedStatsContainer = document.querySelector("#trustedStatsContainer");
 
