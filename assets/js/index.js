@@ -479,3 +479,95 @@ if (shopBreaksGrid && shopBreaksSort && shopBreaksShowing) {
 
     applyShopBreaksFilters();
 }
+
+const cookieConsentStorageKey = "motrador-cookie-consent";
+const cookieDeclinedAtStorageKey = "motrador-cookie-declined-at";
+const cookieDeclineSnoozeMs = 5 * 60 * 1000;
+
+function hasAcceptedCookieConsent() {
+    return window.localStorage.getItem(cookieConsentStorageKey) === "accepted";
+}
+
+function hasActiveDeclineSnooze() {
+    const declinedAtRaw = window.localStorage.getItem(cookieDeclinedAtStorageKey);
+    if (!declinedAtRaw) {
+        return false;
+    }
+
+    const declinedAt = Number(declinedAtRaw);
+    if (!Number.isFinite(declinedAt)) {
+        window.localStorage.removeItem(cookieDeclinedAtStorageKey);
+        return false;
+    }
+
+    const isStillSnoozed = (Date.now() - declinedAt) < cookieDeclineSnoozeMs;
+    if (!isStillSnoozed) {
+        window.localStorage.removeItem(cookieDeclinedAtStorageKey);
+    }
+    return isStillSnoozed;
+}
+
+function setCookieConsentAccepted() {
+    window.localStorage.setItem(cookieConsentStorageKey, "accepted");
+    window.localStorage.removeItem(cookieDeclinedAtStorageKey);
+}
+
+function setCookieConsentDeclined() {
+    window.localStorage.setItem(cookieConsentStorageKey, "declined");
+    window.localStorage.setItem(cookieDeclinedAtStorageKey, String(Date.now()));
+}
+
+function createCookieBanner() {
+    const banner = document.createElement("aside");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-live", "polite");
+    banner.setAttribute("aria-label", "Cookie consent");
+
+    banner.innerHTML = `
+        <p class="cookie-banner-text">
+            We use cookies to improve your experience on Motrador.
+            <a href="./privacy-policy.html">Learn more</a>.
+        </p>
+        <div class="cookie-banner-actions">
+            <button type="button" class="btn btn-outline small cookie-banner-decline">Decline</button>
+            <button type="button" class="btn btn-primary small cookie-banner-accept">Accept</button>
+        </div>
+    `;
+
+    return banner;
+}
+
+function initCookieConsentBanner() {
+    if (hasAcceptedCookieConsent() || hasActiveDeclineSnooze()) {
+        return;
+    }
+
+    const banner = createCookieBanner();
+    const acceptButton = banner.querySelector(".cookie-banner-accept");
+    const declineButton = banner.querySelector(".cookie-banner-decline");
+    if (!acceptButton || !declineButton) {
+        return;
+    }
+
+    function closeBanner() {
+        banner.classList.add("is-hidden");
+        window.setTimeout(() => {
+            banner.remove();
+        }, 220);
+    }
+
+    acceptButton.addEventListener("click", () => {
+        setCookieConsentAccepted();
+        closeBanner();
+    });
+
+    declineButton.addEventListener("click", () => {
+        setCookieConsentDeclined();
+        closeBanner();
+    });
+
+    document.body.appendChild(banner);
+}
+
+initCookieConsentBanner();
