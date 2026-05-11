@@ -724,14 +724,14 @@ body.search-modal-open {
         linear-gradient(180deg, #020a1a 0%, #010714 100%);
 }
 
-.hero::after {
+/* .hero::after {
     content: "";
     position: absolute;
     inset: 20px 0 auto;
     height: 420px;
     background: linear-gradient(90deg, rgba(7, 17, 40, 0.62), rgba(3, 9, 22, 0));
     pointer-events: none;
-}
+} */
 
 .hero-inner {
     position: relative;
@@ -844,7 +844,7 @@ body.search-modal-open {
     position: relative;
 }
 
-.hero-media::before {
+/* .hero-media::before {
     content: "";
     position: absolute;
     inset: 14% 10% auto;
@@ -852,7 +852,7 @@ body.search-modal-open {
     background: radial-gradient(circle, rgba(21, 112, 255, 0.2), transparent 68%);
     filter: blur(14px);
     z-index: -1;
-}
+} */
 
 .hero-media img {
     width: 100%;
